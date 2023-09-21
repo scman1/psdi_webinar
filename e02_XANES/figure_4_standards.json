@@ -1,0 +1,28 @@
+{
+    "figure_id": "Figure 1",
+    "publication": {
+        "cdi_pub": 37,
+        "doi": "10.1039/c7fd00221a"
+    },
+    "data_object": {
+        "cdi_do": 537,
+        "doi": "10.5258/SOTON/D0408"
+    },
+    "data_file": "Xray_data.zip",
+    "data_mapping": {
+        "input_type": "athena",
+        "data_path": "../wf_data/pub_037/XAFS_prj/",
+        "file_mappings": [
+            {
+                "group": "Sn Foil",
+		"group_name": "merge",
+                "file_name": "Sn foil.prj"
+            },
+            {
+                "group": "SnO2",
+		"group_name": "SnO2_0_9_2_6_13_5_0_8_1_0_with_theory",
+                "file_name": "SnO2 0.9 2.6-13.5 gbkg.prj"
+            }
+        ]
+    }
+}
