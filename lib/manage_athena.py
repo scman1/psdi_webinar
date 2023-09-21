@@ -62,6 +62,18 @@ def set_logger(log_file):
 
 
  #######################################################
+# | Create an output dir if it does not exist in the  | #
+# V              specified location                   V #
+ #######################################################
+def set_out_dir(out_prefix, out_location):
+    # create the path for storing results
+    out_path = Path(out_location, out_prefix)
+    Path(out_path).mkdir(parents=True, exist_ok=True)
+    return out_path
+    
+     
+    
+ #######################################################
 # |    Build a list of all files matching the given   | #
 # V                     pattern                       V #
  #######################################################
