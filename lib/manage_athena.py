@@ -173,7 +173,7 @@ def rebin_group(a_group):
 # |             Lineal Combination Fitting            | #
 # V                group + standards                  V #
  #######################################################
-def lcf_group(a_group, lcf_components=[], fit_limits=[29180, 29230], 
+def lcf_group(a_group, lcf_components=[], fit_limits=[-np.inf, np.inf], 
               same_e0 = False, fit_space = 'norm'):
     if lcf_components == []:
         print ("need a list of component groups to fit")

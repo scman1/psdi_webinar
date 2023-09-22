@@ -9,7 +9,7 @@ def make_subplot(a_subplt, group1, group2):
     a_subplt.set_title(group2.arrayname, fontsize=8)
     a_subplt.legend() # show legend
      
-    a_subplt.set_xlim([29170, 29240])
+    a_subplt.set_xlim([29180, 29230])
     #a_subplt.set_ylim([0, 1.5])
     #a_subplt.tick_params(axis='both', which='major', labelsize=9)
     #xlabels = a_subplt.get_xticklabels()
@@ -19,6 +19,7 @@ def make_subplot(a_subplt, group1, group2):
 # compare LCF plots
 def compare_lcf_plot(result_list):
     components = len(result_list)
+    fig = plt.figure(figsize=(8, 2))
     fig, axes = plt.subplots(1,components, constrained_layout=True)
     for i in range(0,components):
         axes[i] = make_subplot(axes[i], result_list[i][0], result_list[i][1])
