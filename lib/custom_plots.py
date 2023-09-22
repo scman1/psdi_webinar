@@ -9,7 +9,7 @@ def make_subplot(a_subplt, group1, group2):
     a_subplt.set_title(group2.arrayname, fontsize=8)
     a_subplt.legend() # show legend
      
-    a_subplt.set_xlim([29190, 29230])
+    a_subplt.set_xlim([29170, 29240])
     #a_subplt.set_ylim([0, 1.5])
     #a_subplt.tick_params(axis='both', which='major', labelsize=9)
     #xlabels = a_subplt.get_xticklabels()
@@ -17,15 +17,15 @@ def make_subplot(a_subplt, group1, group2):
     return a_subplt
 
 # compare LCF plots
-def compare_lcf_plot(lcf_1, lcf_2, lcf_3):
-    fig, axes = plt.subplots(1,3, constrained_layout=True)
-    axes[0] = make_subplot(axes[0], lcf_1[0], lcf_1[1])
-    axes[1] = make_subplot(axes[1], lcf_2[0], lcf_2[1])
-    axes[2] = make_subplot(axes[2], lcf_3[0], lcf_3[1])
+def compare_lcf_plot(result_list):
+    components = len(result_list)
+    fig, axes = plt.subplots(1,components, constrained_layout=True)
+    for i in range(0,components):
+        axes[i] = make_subplot(axes[i], result_list[i][0], result_list[i][1])
     return fig
 
-#chik plots
 
+#chik plots
 # using markers
 def plot_markers(data_set,rmin,rmax,kmin,kmax, datalabel="data"):
     fig = plt.figure()#figsize=(10, 8))

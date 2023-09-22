@@ -8,6 +8,9 @@ from larch.xafs import autobk
 # calculate fourier transform
 from larch.xafs import xftf
 
+# get e0 for group
+from larch.xafs import find_e0
+
 # rebin mu 
 from larch.xafs import rebin_xafs
 
@@ -145,6 +148,13 @@ def recalibrate_energy(a_group, recalibrate_to):
     return a_group
 
  #######################################################
+# | Calculate E0, the energy threshold of absorption, | #
+# V         or ‘edge energy’ for a given mu(E)        V #
+ #######################################################
+def get_group_e0(a_group):
+    return find_e0(a_group)
+
+ #######################################################
 # |                Rebin signal with                  | #
 # V                     defaults                      V #
  #######################################################
@@ -163,10 +173,14 @@ def rebin_group(a_group):
 # |             Lineal Combination Fitting            | #
 # V                group + standards                  V #
  #######################################################
-def lcf_group(a_group, lcf_components=[]):
+def lcf_group(a_group, lcf_components=[], fit_limits=[29180, 29230], 
+              same_e0 = False, fit_space = 'norm'):
     if lcf_components == []:
         print ("need a list of component groups to fit")
-    lcfr = math.lincombo_fit(a_group, lcf_components)#, vary_e0=True)
+    lcfr = math.lincombo_fit(a_group, lcf_components, 
+                             weights=[0.5,0.5], arrayname=fit_space,
+                             xmin=fit_limits[0],xmax=fit_limits[1], 
+                             vary_e0 = same_e0)
     names_lbl = ""
 
     lcfr.energy = lcfr.xdata
@@ -180,10 +194,11 @@ def lcf_group(a_group, lcf_components=[]):
         array_label += a_w + ": " + '%.2f' % (lcfr.weights[a_w]*100.0) + "% "
     lcfr.filename = names_lbl
     
-  
     lcfr.arrayname = array_label
     
     return lcfr
+
+
 
  #######################################################
 # |         Athena recalculates everything so we      | #

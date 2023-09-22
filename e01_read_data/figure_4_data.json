@@ -1,6 +1,6 @@
 {
-    "figure_id": "Figure 4A",
-    "figure_legend":"(A) XANES spectra and their first derivative (inset of A) of as-prepared samples and references on the Sn K-edge.",
+    "figure_id": "Figure 4",
+    "figure_legend":"(A) XANES spectra and their first derivative (inset of A) of as-prepared samples and references on the Sn K-edge.(B and C) Linear combination fitting (LCF) of the peak. SnO2 and (B) Sn foil (red line) or (C) the Sn K-edge spectra of the H2 treated sample collected under H2 (cyan line) are used as references for the fittings. The goodness of fit (R-factors) for the fits with Sn foil and Pt3Sn are H2 treated 0.9% and 0.08%, Ar treated 0.1% and 0.2%, air treated 0.5% and 0.6%.",
     "publication": {
         "cdi_pub": 37,
         "doi": "10.1039/c7fd00221a"
