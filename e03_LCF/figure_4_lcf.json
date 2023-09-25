@@ -11,7 +11,9 @@
     "data_file": "Xray_data.zip",
     "variables":{
         "reference_standard": "Sn Foil",
-	"lcf_analyses":[
+        "lower_limit":-20,
+        "upper_limit":30,
+        "lcf_analyses":[
             {"lcf_components":["Sn Foil","SnO2"],"lcf_groups":["H2", "Ar", "Air"]},
             {"lcf_components":["Sn Foil","SnO2"],"lcf_groups":["H2 H", "Ar H", "Air H"]}
         ]
