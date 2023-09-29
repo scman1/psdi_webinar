@@ -1,0 +1,23 @@
+{"figure_id": "Figure 4",
+ "operation": "xanes_analysis",
+ "task_list": [{"name": "recalibrate_data", 
+                "sequence":1, 
+                "variables": {
+                    "reference_standard": "Sn Foil",
+                    "x_min": 29150, 
+                    "x_max": 29220}},
+               {"name": "xanes_plot_normalised",  
+                "sequence":2, 
+                "variables":{"x_min": 29180,
+                             "x_max": 29400, 
+                             "plot_groups":["Air","Ar","H2", "Sn Foil","SnO2"]}},
+               {"name": "xanes_plot_derivative", 
+                "sequence":3, 
+                "variables":{"x_min": 29190, 
+                             "x_max": 29210,
+                            "plot_groups":["Air","Ar","H2", "Sn Foil","SnO2"]}},
+               {"name": "save_processed", 
+                "sequence":4, 
+                "variables":{"out_prefix": "PtSn_KEdge", 
+                             "out_location": "../outputs"}}]
+}
