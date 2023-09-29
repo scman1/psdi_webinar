@@ -10,7 +10,7 @@
         "doi": "10.5258/SOTON/D0408"
     },
     "data_file": "Xray_data.zip",
-    "data_mapping": {
+    "data_mapping": [{
         "data_type": "text",
         "data_path": "../wf_data/pub_037/XAFS_prj/Sn K-edge/ascii",
         "column_labels": "energy time I0 It Iref  mu lnItIref",
@@ -47,5 +47,9 @@
                 "pattern": "*_PtSn_OCH_H*"
             }
         ]
+    }],
+    "outputs":{
+        "out_prefix": "PtSn_KEdge",
+        "out_location": "../outputs"
     }
 }

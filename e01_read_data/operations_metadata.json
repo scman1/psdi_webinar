@@ -1,0 +1,7 @@
+{"figure_id": "Figure 4",
+ "operation": "read_and_process_raw",
+ "task_list": [{"name": "plot_read", "sequence":1, "variables": {"x_min": 29000, "x_max": 29800}},
+               {"name": "normalise",  "sequence":2, "variables":{}},
+               {"name": "plot_normalised", "sequence":3, "variables":{"x_min": 29000, "x_max": 29400}},
+               {"name": "save_processed", "sequence":4, "variables":{"out_prefix": "PtSn_KEdge", "out_location": "../outputs"}}]
+}
