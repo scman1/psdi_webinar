@@ -150,3 +150,49 @@ def plot_normalised(athena_groups = {}, include_groups = {}, aspect = (6,8), xli
     plt.show()
 
     return plt
+
+
+# for the path explorer
+def plot_dashed_fit(data_set,rmin,rmax,kmin,kmax, datalabel="data"):
+    fig = plt.figure()#figsize=(10, 8))
+    ax1 = fig.add_subplot(211)
+    ax2 = fig.add_subplot(212)
+    # Creating the chifit plot from scratch
+    #from .xlarch.wxlibafsplots import plot_chifit
+    #plot_chifit(dset, _larch=session)
+    
+    ax1.plot(data_set.data.k, data_set.data.chi*data_set.data.k**2, color= "black",  label=datalabel)
+    
+    ax1.plot(data_set.model.k, data_set.model.chi*data_set.data.k**2 , color='orange', linestyle='--',label='fit')
+    ax1.set_xlim(kmin, kmax)
+    #ax1.set_ylim(-1, 2)
+    ax1.set_xlabel("$k (\mathrm{\AA})^{-1}$")
+    ax1.set_ylabel("$k^2$ $\chi (k)(\mathrm{\AA})^{-2}$")
+    ax1.legend()
+    
+    ax2.plot(data_set.data.r, data_set.data.chir_mag, color= "black", label=datalabel)
+ 
+    ax2.plot(data_set.model.r, data_set.model.chir_mag, linestyle='--', color='orange', label='fit')
+    ax2.set_xlim(rmin,rmax)
+    ax2.set_xlabel("$R(\mathrm{\AA})$")
+    ax2.set_ylabel("$|\chi(R)|(\mathrm{\AA}^{-3})$")
+    ax2.legend(loc='upper right')
+
+    return plt
+
+# for the path explorer
+def plot_rmr(data_set,rmin,rmax,datalabel="data"):
+    fig = plt.figure()
+    
+    plt.tick_params(left=False,labelleft = False) # labels along the bottom edge are off
+    
+    plt.plot(data_set.data.r, data_set.data.chir_mag, color='b')
+    plt.plot(data_set.data.r, data_set.data.chir_re-2, color='b', label=datalabel)
+    plt.plot(data_set.model.r, data_set.model.chir_mag, color='r',linestyle='--' )
+    plt.plot(data_set.model.r, data_set.model.chir_re-2, color='r', linestyle='--', label='fit')
+    plt.xlabel("Radial distance/$\mathrm{\AA}$")
+    plt.xlim(0, 5)
+    
+    
+    plt.legend()
+    return plt

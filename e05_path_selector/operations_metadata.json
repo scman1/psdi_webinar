@@ -11,13 +11,12 @@
     "data_file": "Xray_data.zip",
  "task_list": [{"name": "get_fit_resources", 
                 "sequence":1, 
-                "variables": {"data_path": "../wf_data/pub_037/additional",
-                              "crystal_files": ["1690711.cif","1692396.cif",
-                                                "1680385.cif","1692395b.cif"],
-                              "gds_parameters": "SnK_edge_gds.csv",
-                              "selected_paths": "SnK_edge_sp.csv", 
+                "variables": {"data_path": "../wf_data/pub_723/additional",
+                              "crystal_files": ["1667441.cif"],
+                              "gds_parameters": "lamno3_gds.csv",
+                              "selected_paths": "lamno3_sp.csv", 
                               "fit_vars": {
-                                  "fitspace": "r",
+                                  "fitspace": "k",
                                   "kmin": 0,
                                   "kmax": 10,
                                   "kw": 2,
@@ -26,7 +25,7 @@
                                   "rmin": 0.0,
                                   "rmax": 5.0
                               },
-                              "absorbing_atoms": ["Sn", "Sn", "O", "Pt"],
+                              "absorbing_atoms": ["Mn"],
                               "max_radius": 5.0}
                },
                {"name": "rebin_data",  
