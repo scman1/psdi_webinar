@@ -191,7 +191,11 @@ def show_feff_paths(f_paths = ["FeS2.inp"], selected_paths=[]):
     ipysheet.cell_range(paths_data)
     return path_sheet
 
-# get labels from the feff/paths.dat file
+# get labels from the feff/paths.dat file 
+#########################################
+# need to add info from files.dat       #
+#***************************************#
+#########################################
 def get_path_labels(paths_file):
     is_meta = True
     count = 0

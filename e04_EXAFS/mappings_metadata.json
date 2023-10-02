@@ -1,0 +1,71 @@
+{
+    "figure_id": "Figure 5",
+    "figure_legend": "",
+    "publication": {
+        "cdi_pub": 37,
+        "doi": "10.1039/c7fd00221a"
+    },
+    "data_object": {
+        "cdi_do": 537,
+        "doi": "10.5258/SOTON/D0408"
+    },
+    "data_file": "Xray_data.zip",
+    "data_mapping": [
+        {
+            "data_path": "../outputs/PtSn_KEdge",
+            "data_type": "athena",
+            "file_mappings": [
+                {
+                    "group": "PtSn",
+                    "group_name": "PtSn",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                },
+                {
+                    "group": "Air",
+                    "group_name": "Air",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                },
+                {
+                    "group": "Ar",
+                    "group_name": "Ar",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                },
+                {
+                    "group": "H2",
+                    "group_name": "H2",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                },
+                {
+                    "group": "PtSn H",
+                    "group_name": "PtSn_H",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                },
+                {
+                    "group": "Air H",
+                    "group_name": "Air_H",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                },
+                {
+                    "group": "Ar H",
+                    "group_name": "Ar_H",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                },
+                {
+                    "group": "H2 H",
+                    "group_name": "H2_H",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                },
+                {
+                    "group": "Sn Foil",
+                    "group_name": "Sn_Foil",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                },
+                {
+                    "group": "SnO2",
+                    "group_name": "SnO2",
+                    "file_name": "PtSn_KEdge_lcf.prj"
+                }
+            ]
+        }
+    ]
+}
