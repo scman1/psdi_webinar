@@ -224,8 +224,6 @@ def get_path_labels(paths_file):
         all_paths[a_path['index']] = a_path
     return all_paths
 
-
-
 def show_selected_paths(paths_sheet, sel_path_list):
     df_sheet = ipysheet.to_dataframe(paths_sheet)
     files = []
@@ -379,8 +377,6 @@ def plot_chikr(data_set,rmin,rmax,kmin,kmax):
     ax2.fill([rmin, rmin, rmax, rmax],[-rmax, rmax, rmax, -rmax], color='g',alpha=0.1)
     ax2.text(rmax-0.65, -rmax+0.5, 'fit range')
     return plt
-
-
 
 def get_fit_report(fit_out, session):
     return feffit_report(fit_out, _larch=session)

@@ -30,9 +30,13 @@
                 "sequence":2, 
                 "variables":{}
                },
-               {"name": "filter_path_combinations",  
+               {"name": "create_path_combinations",  
                 "sequence":3, 
-                "variables":{}
+                "variables":{"max_paths":3,
+                             "min_cw_ratio":20.0,
+                             "max_deg":10,
+                             "max_reff":5.0
+                            }
                },
                {"name": "test_path_combinations",  
                 "sequence":4, 
