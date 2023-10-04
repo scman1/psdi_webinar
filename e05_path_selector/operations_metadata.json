@@ -9,12 +9,10 @@
         "doi": "10.5258/SOTON/D0408"
     },
     "data_file": "Xray_data.zip",
- "task_list": [{"name": "get_fit_resources", 
+ "task_list": [{"name": "generate_scattering_paths", 
                 "sequence":1, 
                 "variables": {"data_path": "../wf_data/pub_723/additional",
                               "crystal_files": ["1667441.cif"],
-                              "gds_parameters": "lamno3_gds.csv",
-                              "selected_paths": "lamno3_sp.csv", 
                               "fit_vars": {
                                   "fitspace": "k",
                                   "kmin": 0,
@@ -28,33 +26,29 @@
                               "absorbing_atoms": ["Mn"],
                               "max_radius": 5.0}
                },
-               {"name": "rebin_data",  
+               {"name": "generate_paths",  
                 "sequence":2, 
-                "variables":{"rebin_groups":["H2", "Ar", "Air"],
-                             "out_prefix": "PtSn_KEdge", 
-                             "out_location": "../outputs",
-                             "out_file": "rebinned.prj"
-                            }
+                "variables":{}
                },
-               {"name": "set_gds_parameters",  
+               {"name": "filter_path_combinations",  
                 "sequence":3, 
                 "variables":{}
                },
-               {"name": "generate_feff_paths",  
+               {"name": "test_path_combinations",  
                 "sequence":4, 
                 "variables":{}
                },
-               {"name": "select_paths",  
+               {"name": "show_best_combinations",  
                 "sequence":5, 
                 "variables":{}
                },
-               {"name": "assign_gds_to_paths",  
+
+               {"name": "save_results",  
                 "sequence":6, 
-                "variables":{}
-               },
-               {"name": "run_fit",  
-                "sequence":7, 
-                "variables":{}
+                "variables":{
+                             "out_prefix": "LaMnO3", 
+                             "out_location": "../outputs"
+                            }
                }]
 
 }
