@@ -135,7 +135,20 @@ def spreadsheet_to_gds(a_sheet, session):
 # These paths are stored by feff in the files.dat file.
 # if the selected paths list is not empty mark as selected
 def show_feff_paths(f_paths = ["FeS2.inp"], selected_paths=[]):
-    path_count = 0
+    paths_data = get_path_details(f_paths)
+    
+    # mark preiously selected paths
+    for a_path in selected_paths:
+        for val in paths_data:
+            if val[0] == a_path.filename and  val[6] == a_path.label:
+                val[7] = 1
+
+    # use data to populate spreadsheet
+    path_sheet = ipysheet.sheet(rows=len(paths_data), columns=8)
+    ipysheet.cell_range(paths_data)
+    return path_sheet
+
+def get_path_details(f_paths):
     paths_data = []
     for var in f_paths:
         crystal_f = Path(var)
@@ -148,7 +161,6 @@ def show_feff_paths(f_paths = ["FeS2.inp"], selected_paths=[]):
         if not input_file.parent.exists() and input_file.exists():
             print(str(input_file.parent) + "path not found, run feff before running select paths")
             return False
-        count = 0
         # the .dat data is stored in fixed width strings 
         field_widths = [[0,13],[14,21],[22,31],[32,41],[42,48],[49,61]]
         is_meta = True
@@ -159,7 +171,6 @@ def show_feff_paths(f_paths = ["FeS2.inp"], selected_paths=[]):
         with open(input_file) as datfile:
             dat_lines = datfile.readlines()
             for a_line in dat_lines:
-                count += 1
                 if re.match('-*', a_line.strip()).group(0)!= '':
                     is_meta = False
                     #logging.info("{}: {}".format(count, a_line.strip()))
@@ -172,24 +183,15 @@ def show_feff_paths(f_paths = ["FeS2.inp"], selected_paths=[]):
                     data_headers.append('select')
                     paths_data.append(data_headers)
                 else:
-                    path_count += 1
                     data_values = [a_line[s:e].strip() for s,e in field_widths]
                     path_id = str(int(data_values[0][-8:-4]))
                     data_values.append(paths_info[path_id]['label']+'.'+path_id)                    
                     data_values.append(0)
                     data_values[0] = feff_dir+"/"+data_values[0]
                     paths_data.append(data_values)
-    
-    # mark preiously selected paths
-    for a_path in selected_paths:
-        for val in paths_data:
-            if val[0] == a_path.filename and  val[6] == a_path.label:
-                val[7] = 1
+ 
+    return paths_data
 
-    # use data to populate spreadsheet
-    path_sheet = ipysheet.sheet(rows=len(paths_data), columns=8)
-    ipysheet.cell_range(paths_data)
-    return path_sheet
 
 # get labels from the feff/paths.dat file 
 #########################################
