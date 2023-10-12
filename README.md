@@ -3,7 +3,8 @@
  
 The collection of notebooks included in this repository were created for the PSDI webinar.
 
-You can download and follow the video from the presentation to reproduce the examples presented during the seminar
+You can download and follow the video from the presentation to reproduce the examples presented during the seminar.
+
 Each example is presented in an individual folder.
 
 
